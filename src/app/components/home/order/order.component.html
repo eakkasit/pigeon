@@ -1,0 +1,282 @@
+<nav>
+  <div class="logo">
+    <img src="assets/images/logo.jpg" class="img-circle" alt="">
+  </div>
+  <ul>
+    <li>
+      <a routerLink="/home/about">About</a>
+    </li>
+    <li>
+      <a routerLink="/home/price">Price</a>
+    </li>
+    <li>
+      <a routerLink="/home/order">Order</a>
+    </li>
+    <li>
+      <a routerLink="/home/order">Info</a>
+    </li>
+    <li class="dropdown user user-menu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <!-- <img src="assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+        <span class="hidden-xs">Guest</span>
+      </a>
+      <ul class="dropdown-menu">
+        <!-- Menu Footer-->
+        <li class="user-footer">
+          <!-- <div class="pull-left">
+                <a href="#" class="btn btn-default btn-flat">Profile</a>
+              </div> -->
+          <div class="pull-right">
+            <a href="#" class="btn btn-default btn-flat">Sign up</a>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown user user-menu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="hidden-xs">
+          <span class="glyphicon glyphicon-th"></span>
+        </span>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="user-footer">
+          <!-- <div class="pull-left">
+                <a href="#" class="btn btn-default btn-flat">Thai</a>
+              </div> -->
+          <div class="pull-right">
+            <a href="#" class="btn btn-default btn-flat">Eng</a>
+            <a href="#" class="btn btn-default btn-flat">ไทย</a>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<header>
+  <div class="headline">
+    <div class="inner">
+      <!-- <a routerLink="/home/order">
+          <h1>Check price</h1>
+        </a> -->
+
+    </div>
+  </div>
+</header>
+
+
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content">
+    <div class="row">
+      <div class="col-md-4 row-left">
+        <form (ngSubmit)="saveTask(taskForm)" #taskForm="ngForm">
+          <div class="task-detail" *ngIf="!payment">
+            <div class="row">
+              <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                <div style="display:inline;width:60px;height:60px;">
+                  <a href="#">
+                    <i class="fa fa-motorcycle"></i>
+                  </a>
+                </div>
+
+                <div class="knob-label">Motorcycle</div>
+              </div>
+              <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                <a href="#">
+                  <i class="fa fa-truck"></i>
+                </a>
+                <div class="knob-label">Truck</div>
+              </div>
+              <div class="col-xs-4 text-center">
+                <div style="display:inline;width:60px;height:60px;">
+                  <a href="#">
+                    <i class="fa fa-taxi"></i>
+                  </a>
+                </div>
+                <div class="knob-label">Taxi</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <h3>
+                  <span>Place</span>
+                </h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4">start</label>
+                <div class="col-md-8">
+                  <input name="txtstart" id="txtstart" type="text" placeholder="Search for Location" required autocorrect="off" autocapitalize="off"
+                    spellcheck="off" class="form-control" #placestart ngModel>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4">to</label>
+                <div class="col-md-8">
+                  <input name="txtend" id="txtend" type="text" required placeholder="Search for Location" autocorrect="off" autocapitalize="off"
+                    spellcheck="off" class="form-control" #placeend ngModel>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <h3>
+                  <span>Sender </span>
+                </h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4">Sender</label>
+                <div class="col-md-8">
+                  <input name="senderName" id="senderName" type="text" required placeholder="Sender Name" class="form-control" ngModel>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4">Tel</label>
+                <div class="col-md-8">
+                  <input name="senderPhone" id="senderPhone" type="text" required placeholder="Tel Sender" class="form-control" ngModel>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4">Address More</label>
+                <div class="col-md-8">
+                  <textarea cols="30" name="senderAddressMore" id="senderAddressMore" rows="4" class="form-control" placeholder="address detail more such as building block floor room"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <h3>
+                  <span>Receiver </span>
+                </h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4">Receive</label>
+                <div class="col-md-8">
+                  <input type="text" name="receiveName" id="receiveName" required placeholder="Receive Name" class="form-control" ngModel>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4">Tel</label>
+                <div class="col-md-8">
+                  <input type="text" name="receivePhone" id="receivePhone" required placeholder="Tel Receive" class="form-control" ngModel>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4">Address More</label>
+                <div class="col-md-8">
+                  <textarea cols="30" name="receiveAddressMore" id="receiveAddressMore" rows="4" class="form-control" placeholder="address detail more such as building block floor room"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group pull-right" *ngIf="price!=0">
+                    <label class="col-md-12 ">{{price}}</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="from-group">
+                  <div class="col-md-6 text-center">
+                    <input type="button" name="" class="btn btn-default" value="Advance">
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <input type="button" class="btn btn-succes" [disabled]="taskForm.invalid" value="Payment" (click)="toPayment()">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="task-payment" *ngIf="payment">
+            <ul class="nav nav-pills nav-stacked">
+              <li>
+                <a>Internet Banking
+                  <span class="pull-right text-red">
+                    <i class="fa fa-angle-down"></i>
+                  </span>
+                </a>
+                <ul class="products-list product-list-in-box">
+                  <li class="item">
+                    <div class="product-img">
+                      <img src="assets/images/icons/bank/kbank.svg" alt="Product Image">
+                    </div>
+                    <div class="product-info">
+                      <span class="product-description">
+
+                      </span>
+                    </div>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a>Credit Card
+                  <span class="pull-right text-red">
+                    <i class="fa fa-angle-down"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a>Mywallet
+                  <span class="pull-right text-red">
+                    <i class="fa fa-angle-down"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <div class="row">
+              <div class="row">
+                <div class="from-group">
+                  <div class="col-md-6 text-center">
+                    <input type="button" name="" class="btn btn-default" value="Advance" (click)="toOrder()">
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <input type="button" name="" class="btn btn-succes" value="Payment">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- /.box -->
+      <!-- /.col -->
+
+      <div class="col-md-8 row-right">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" *ngIf="showmap">
+          <agm-marker *ngFor="let m of markers; let i = index" (dragEnd)="draggEnded($event,i)" (markerClick)="clickedMarker(m.label, i)"
+            [latitude]="m.lat" [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable" [visible]="markershow">
+
+            <agm-info-window>
+              <strong>InfoWindow content</strong>
+            </agm-info-window>
+          </agm-marker>
+          <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="dir.destination" [renderOptions]="diroptions"></agm-direction>
+        </agm-map>
+      </div>
+    </div>
+
+    <!-- /.row -->
+
+  </section>
+  <!-- /.content -->
+</div>

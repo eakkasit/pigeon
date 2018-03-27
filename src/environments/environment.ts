@@ -6,3 +6,7 @@
 export const environment = {
   production: false
 };
+
+export const config = {
+  mapApiKey: 'AIzaSyBfcTO-X1OwOPRMaDsuO2f6B-AJ02_Xj98'
+};
